@@ -11,7 +11,9 @@ logger = logging.getLogger(__name__)
 
 # --- Configuration ---
 # Replace with your actual bot token obtained from BotFather
-TELEGRAM_BOT_TOKEN = "8207519709:AAFnE_HI4vGxB26Jd0Aq9HMBHWwBdZ3qOtU"
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+if not TELEGRAM_BOT_TOKEN:
+    raise ValueError("TELEGRAM_BOT_TOKEN environment variable not set.")
 JSON_FILE_PATH = "exam_result.json"
 
 # Global variable to store exam data
